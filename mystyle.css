@@ -1,0 +1,83 @@
+.space{
+  margin-top: 130px;
+}
+.button{
+  width: 120px;
+}
+.add{
+  padding-left: 0px;
+  padding-right: 6px;
+  font-size: 10px;
+}
+.modal-title {
+    margin-inline-start: auto;
+    }
+
+.card{
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 8%);
+}
+.card-header{
+    padding: 0px;
+    border-bottom: 1px solid #e5e5e5;
+    background-color: #fff;
+    margin: 0px;
+}
+.card-title{
+    padding-left: 15px;
+}
+.card-body {
+  padding: 0px;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+  
+  }
+  
+  .flex-item-left {
+    padding: 10px;
+    padding-left: 0px;
+    flex: 50%;
+  }
+  
+  .flex-item-right {
+    padding: 10px;
+    padding-top: 11px;
+  }
+  .formcard {
+    position: relative;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 8%);
+    padding: 23px;
+    margin: 0 auto;
+    width: 50%;
+  }
+  .form-check {
+    padding-left: 0; 
+}
+  .form-check-inline .form-check-input {
+    margin-top: revert;
+  }
+  .form-check-label {
+    margin-bottom: -4px;
+}
+  .form-check-input {
+    margin-top: 0.5rem;
+  }
+
+  label {
+    margin-right: 3.5rem;
+  }
+  .raidocheckweight {
+    font-weight: 450;
+}
+.canclebtn{
+    padding: 6px;
+    border: 1px;
+    border-radius: 3px;
+    background-color: #fff;
+}
