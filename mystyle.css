@@ -12,7 +12,12 @@
 .modal-title {
     margin-inline-start: auto;
     }
-
+.modal-header .close {
+      margin-top: -6px !important;
+}
+.modal-body {
+  padding-top: 12px !important;
+}
 .card{
     background-color: #fff;
     border-radius: 6px;
