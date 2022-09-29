@@ -1,25 +1,25 @@
 
 
 $(document).ready(function () {
-  $('#MybtnModal').click(function () {
-    $('#Mymodal').modal('show')
+  $('#btn-Modal').click(function () {
+    $('#log-in-modal').modal('show')
   });
-  $('.MybtnModal2').click(function () {
-    $('#Mymodal').modal('show')
+  $('.log-in-btn-modal').click(function () {
+    $('#log-in-modal').modal('show')
   });
-  $("#Myform").submit(function (event) {
+  $("#user-detail-form").submit(function (event) {
     event.preventDefault();
     $('#fName').val();
     $('#lName').val();
-    $('#inputEmail4"').val();
-    $('#inputPassword4').val();
+    $('#inputEmail"').val();
+    $('#inputPassword').val();
     $('#inputAddress').val();
-    $('#age').val();
+    $('#inputinputAge').val();
     $('#inputCity').val();
     $('#inputState').val();
     $('#inputZip').val();
     $('#inputState').val();
-    $('#radio').val();
+    // $('#radio').val();
     $("input[type='radio']").val();
     $("input[type='checkbox']").val();
   });
@@ -49,7 +49,7 @@ function addUser(event) {
   event.preventDefault();
 
   var nbr;
-  nbr = document.getElementById("age").value;
+  nbr = document.getElementById("inputAge").value;
   if (isNaN(nbr)) {
     alert("Enter the Number");
   }

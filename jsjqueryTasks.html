@@ -29,10 +29,10 @@
               <h4 class="card-title">User Details</h4>
             </div>
             <div class="flex-item-right">
-              <button class="btn btn-primary button" id="MybtnModal"><i class="fas fa-plus add"></i>Add</button>
+              <button class="btn btn-primary button" id="btn-Modal"><i class="fas fa-plus add"></i>Add</button>
             </div>
           </div>
-          <div class="modal" id="Mymodal">
+          <div class="modal" id="log-in-modal">
             <div class="modal-dialog">
               <div class="modal-content">
 
@@ -40,7 +40,7 @@
                   <h4 class="modal-title">Log In</h4>
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-                <form id="Myform">
+                <form id="user-detail-form">
                   <div class="modal-body">
                     <div class="form-row">
                       <div class="form-group col-md-6 ">
@@ -57,12 +57,12 @@
                     <div class="form-group">
                       <label for="inputEmail4">Email</label>
                       <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" maxlength="25"
-                        class="form-control" id="inputEmail4" placeholder="Email" required>
+                        class="form-control" id="inputEmail" placeholder="Email" required>
                     </div>
                     <div class="form-group">
-                      <label for="inputPassword4">Password</label>
+                      <label for="inputPassword">Password</label>
                       <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" maxlength="8"
-                        class="form-control" id="inputPassword4" placeholder="Password" required>
+                        class="form-control" id="inputPassword" placeholder="Password" required>
                     </div>
                     <div class="form-group">
                       <label for="inputAddress">Address</label>
@@ -71,7 +71,7 @@
                     </div>
                     <div class="form-group ">
                       <label for="number">Age</label>
-                      <input name="age" type="text" id="age" size="30" maxlength="30" class="form-control" required>
+                      <input name="age" type="text" id="inputAge" size="30" maxlength="30" class="form-control" required>
                     </div>
                     <!-- </div> -->
                     <div class="form-row">
@@ -174,7 +174,7 @@
                       <td>
 
                         <li class="list-inline-item">
-                          <i class=" btn-sm rounded-0 MybtnModal2" type="icon" data-toggle="tooltip"
+                          <i class=" btn-sm rounded-0 log-in-btn-modal" type="icon" data-toggle="tooltip"
                             data-placement="top" title="Edit"><i class="fa fa-edit"></i></i>
                         </li>
                         <li class="list-inline-item">
@@ -198,7 +198,7 @@
                       <td>
 
                         <li class="list-inline-item">
-                          <i class="btn-sm rounded-0 MybtnModal2" type="icon" data-toggle="tooltip" data-placement="top"
+                          <i class="btn-sm rounded-0 log-in-btn-modal" type="icon" data-toggle="tooltip" data-placement="top"
                             title="Edit"><i class="fa fa-edit"></i></i>
                         </li>
                         <li class="list-inline-item">
@@ -222,7 +222,7 @@
                       <td>
 
                         <li class="list-inline-item">
-                          <i class="btn-sm rounded-0 MybtnModal2" type="button" data-toggle="tooltip"
+                          <i class="btn-sm rounded-0 log-in-btn-modal" type="button" data-toggle="tooltip"
                             data-placement="top" title="Edit"><i class="fa fa-edit"></i></i>
                         </li>
                         <li class="list-inline-item">
@@ -246,7 +246,7 @@
                       <td>
 
                         <li class="list-inline-item">
-                          <i class="btn-sm rounded-0 MybtnModal2" type="icon" data-toggle="tooltip" data-placement="top"
+                          <i class="btn-sm rounded-0 log-in-btn-modal" type="icon" data-toggle="tooltip" data-placement="top"
                             title="Edit"><i class="fa fa-edit"></i></i>
                         </li>
                         <li class="list-inline-item">
@@ -270,7 +270,7 @@
                       <td>
 
                         <li class="list-inline-item">
-                          <i class="btn-sm rounded-0 MybtnModal2" type="icon" data-toggle="tooltip" data-placement="top"
+                          <i class="btn-sm rounded-0 log-in-btn-modal" type="icon" data-toggle="tooltip" data-placement="top"
                             title="Edit"><i class="fa fa-edit"></i>
                           </i>
                         <li class="list-inline-item">
