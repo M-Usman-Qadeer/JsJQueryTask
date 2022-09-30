@@ -1,300 +1,463 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Js and Jquery Tasks</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.10.2/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="http://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="mystyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  </head>
 
-<head>
-  <title>Js and Jquery Tasks</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css">
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
-  <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="mystyle.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    crossorigin="anonymous">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-</head>
-
-<body>
-  <script type="text/javascript" src="myscript.js"></script>
-  <section class="space">
-    <div class="container">
-      <div class="card">
-        <div class="card-header">
-          <div class="flex-container">
-            <div class="flex-item-left">
-              <h4 class="card-title">User Details</h4>
+  <body>
+    <script type="text/javascript" src="myscript.js"></script>
+    <section class="space">
+      <div class="container">
+        <div class="card">
+          <div class="card-header">
+            <div class="flex-container">
+              <div class="flex-item-left">
+                <h4 class="card-title">User Details</h4>
+              </div>
+              <div class="flex-item-right">
+                <button class="btn btn-primary button" id="btn-Modal">
+                  <i class="fas fa-plus add"></i>Add
+                </button>
+              </div>
             </div>
-            <div class="flex-item-right">
-              <button class="btn btn-primary button" id="btn-Modal"><i class="fas fa-plus add"></i>Add</button>
-            </div>
-          </div>
-          <div class="modal" id="log-in-modal">
-            <div class="modal-dialog">
-              <div class="modal-content">
-
-                <div class="modal-header">
-                  <h4 class="modal-title">Log In</h4>
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <div class="modal" id="log-in-modal">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Log In</h4>
+                    <button type="button" class="close" data-dismiss="modal">
+                      &times;
+                    </button>
+                  </div>
+                  <form id="user-detail-form">
+                    <div class="modal-body">
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="inputFirstname">First Name</label>
+                          <input
+                            type="text"
+                            maxlength="10"
+                            class="form-control"
+                            id="inputFirstname"
+                            placeholder="First name"
+                            required
+                          />
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="inputLastname">Last Name</label>
+                          <input
+                            type="text"
+                            maxlength="10"
+                            class="form-control"
+                            id="inputLastname"
+                            placeholder="Last name"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="inputEmail">Email</label>
+                        <input
+                          type="email"
+                          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                          maxlength="25"
+                          class="form-control"
+                          id="inputEmail"
+                          placeholder="Email"
+                          required
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="inputPassword">Password</label>
+                        <input
+                          type="password"
+                          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                          maxlength="8"
+                          class="form-control"
+                          id="inputPassword"
+                          placeholder="Password"
+                          required
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="inputAddress">Address</label>
+                        <input
+                          type="text"
+                          maxlength="50"
+                          class="form-control"
+                          id="inputAddress"
+                          placeholder="Address"
+                          required
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="inputAge">Age</label>
+                        <input
+                          name="age"
+                          type="text"
+                          id="inputAge"
+                          size="30"
+                          maxlength="30"
+                          class="form-control"
+                          required
+                        />
+                      </div>
+                      
+                      <div class="form-row">
+                        <div class="form-group col-md-4">
+                          <label for="inputCity">City</label>
+                          <input
+                            type="text"
+                            maxlength="10"
+                            class="form-control"
+                            id="inputCity"
+                            required
+                          />
+                        </div>
+                        <div class="form-group col-md-4">
+                          <label for="inputState">State</label>
+                          <select id="inputState" class="form-control">
+                            <option selected>Choose...</option>
+                            <option>Punjab</option>
+                            <option>Sindh</option>
+                            <option>KPK</option>
+                          </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                          <label for="inputZip">Zip</label>
+                          <input
+                            type="text"
+                            maxlength="5"
+                            class="form-control"
+                            id="inputZip"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div class="form-group mb-0 gender">
+                        <label for="inputGender">Gender</label>
+                        <div class="form-check form-check-inline">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="inlineRadioOptions"
+                            value="Male"
+                          />
+                          <label
+                            class="form-check-label raidocheckweight"
+                            for="inlineRadio1"
+                            >Male</label
+                          >
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="inlineRadioOptions"
+                            value="Female"
+                          />
+                          <label
+                            class="form-check-label raidocheckweight"
+                            for="inlineRadio2"
+                            >Female</label
+                          >
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="inlineRadioOptions"
+                            value="Other"
+                          />
+                          <label
+                            class="form-check-label raidocheckweight"
+                            for="inlineRadio3"
+                            >Other</label
+                          >
+                        </div>
+                      </div>
+                      <div class="form-group mb-0">
+                        <label for="inputSkill">Skills</label>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input checkcls" type="checkbox"  value="React">
+                          <label class="form-check-label raidocheckweight"
+                            >React</label
+                          >
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input checkcls" type="checkbox" value="Node">
+                          <label class="form-check-label raidocheckweight"
+                            >Node</label
+                          >
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input checkcls" type="checkbox" value="Javascript">
+                          <label class="form-check-label raidocheckweight"
+                            >Javascript</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="canclebtn align-left"
+                        data-dismiss="modal"
+                      >
+                        Cancle
+                      </button>
+                      <button
+                        type="submit"
+                        value="submit"
+                        class="btn btn-primary"
+                       
+                      >
+                        Submit
+                      </button>
+                    </div>
+                  </form>
                 </div>
-                <form id="user-detail-form">
-                  <div class="modal-body">
-                    <div class="form-row">
-                      <div class="form-group col-md-6 ">
-                        <label for="inputFirstname">First Name</label>
-                        <input type="text" maxlength="10" class="form-control" id="fName" placeholder="First name"
-                          required>
-                      </div>
-                      <div class="form-group col-md-6">
-                        <label for="inputLastname">Last Name</label>
-                        <input type="text" maxlength="10" class="form-control" id="lName" placeholder="Last name"
-                          required>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label for="inputEmail4">Email</label>
-                      <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" maxlength="25"
-                        class="form-control" id="inputEmail" placeholder="Email" required>
-                    </div>
-                    <div class="form-group">
-                      <label for="inputPassword">Password</label>
-                      <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" maxlength="8"
-                        class="form-control" id="inputPassword" placeholder="Password" required>
-                    </div>
-                    <div class="form-group">
-                      <label for="inputAddress">Address</label>
-                      <input type="text" maxlength="50" class="form-control" id="inputAddress" placeholder="Address"
-                        required />
-                    </div>
-                    <div class="form-group ">
-                      <label for="number">Age</label>
-                      <input name="age" type="text" id="inputAge" size="30" maxlength="30" class="form-control" required>
-                    </div>
-                    <!-- </div> -->
-                    <div class="form-row">
-                      <div class="form-group col-md-4">
-                        <label for="inputCity">City</label>
-                        <input type="text" maxlength="10" class="form-control" id="inputCity" required>
-                      </div>
-                      <div class="form-group col-md-4">
-                        <label for="inputState">State</label>
-                        <select id="inputState" class="form-control">
-                          <option selected>Choose...</option>
-                          <option>Punjab</option>
-                          <option>Sindh</option>
-                          <option>KPK</option>
-                        </select>
-                      </div>
-                      <div class="form-group col-md-4">
-                        <label for="inputZip">Zip</label>
-                        <input type="text" maxlength="5" class="form-control" id="inputZip" required />
-                      </div>
-                    </div>
-                    <div class="form-group mb-0 gender">
-                      <label for="inputGender">Gender</label>
-                      <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                          value="option1">
-                        <label class="form-check-label raidocheckweight" for="inlineRadio1">Male</label>
-                      </div>
-                      <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                          value="option2">
-                        <label class="form-check-label raidocheckweight " for="inlineRadio2">Female</label>
-                      </div>
-                      <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-                          value="option3">
-                        <label class="form-check-label raidocheckweight " for="inlineRadio3">Other</label>
-                      </div>
-                    </div>
-                    <div class="form-group mb-0">
-                      <label for="inputSkill">Skills</label>
-                      <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label raidocheckweight">React</label>
-                      </div>
-                      <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label raidocheckweight">Node</label>
-                      </div>
-                      <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label raidocheckweight">Javascript</label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="canclebtn align-left" data-dismiss="modal">Cancle</button>
-                    <button type="submit" value="submit" class="btn btn-primary"
-                      onclick="addUser(event)">Submit</button>
-                  </div>
-                </form>
               </div>
             </div>
           </div>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">
-            <button type="button" class="btn btn-primary">Submit</button>
-          </h5>
-          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-            <div class="cardtable">
-              <div class="scroll">
-                <table class="table borderless">
-                  <thead class="thead-light">
-                    <tr class="tr">
-                      <th class="th">First Name</th>
-                      <th class="th">Last Name</th>
-                      <th class="th">Email</th>
-                      <th class="th">Password</th>
-                      <th class="th">Address</th>
-                      <th class="th">City</th>
-                      <th class="th">State</th>
-                      <th class="th">Zip</th>
-                      <th class="th">Gender</th>
-                      <th class="th">Skill</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="tr">
-                      <td class="td">806</td>
-                      <td class="td">895</td>
-                      <td class="td">875</td>
-                      <td class="td">864</td>
-                      <td class="td">867</td>
-                      <td class="td">806</td>
-                      <td class="td">895</td>
-                      <td class="td">875</td>
-                      <td class="td">864</td>
-                      <td class="td">867</td>
-                      <td>
+          <div class="card-body">
+            <h5 class="card-title">
+              <button type="button" class="btn btn-primary">Submit</button>
+            </h5>
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+              <div class="cardtable">
+                <div class="scroll">
+                  <table class="table borderless">
+                    <thead class="thead-light">
+                      <tr class="tr">
+                        <th class="th">First Name</th>
+                        <th class="th">Last Name</th>
+                        <th class="th">Email</th>
+                        <th class="th">Password</th>
+                        <th class="th">Address</th>
+                        <th class="th">City</th>
+                        <th class="th">State</th>
+                        <th class="th">Zip</th>
+                        <th class="th">Gender</th>
+                        <th class="th">Skill</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="tr">
+                        <td class="td">806</td>
+                        <td class="td">895</td>
+                        <td class="td">875</td>
+                        <td class="td">864</td>
+                        <td class="td">867</td>
+                        <td class="td">806</td>
+                        <td class="td">895</td>
+                        <td class="td">875</td>
+                        <td class="td">864</td>
+                        <td class="td">867</td>
+                        <td>
+                          <li class="list-inline-item">
+                            <i
+                              class="btn-sm rounded-0 log-in-btn-modal"
+                              type="icon"
+                              data-toggle="tooltip"
+                              data-placement="top"
+                              title="Edit"
+                              ><i class="fa fa-edit"></i
+                            ></i>
+                          </li>
+                          <li class="list-inline-item">
+                            <i
+                              class="btn-sm rounded-0"
+                              type="icon"
+                              data-toggle="dialog-box"
+                              data-placement="top"
+                              onclick="deleterecord()"
+                              title="Delete"
+                              ><i class="fa fa-trash"></i
+                            ></i>
+                          </li>
+                        </td>
+                      </tr>
+                      <tr class="tr">
+                        <td class="td">86%</td>
+                        <td class="td">86%</td>
+                        <td class="td">86%</td>
+                        <td class="td">86%</td>
+                        <td class="td">86%</td>
+                        <td class="td">86%</td>
+                        <td class="td">86%</td>
+                        <td class="td">86%</td>
+                        <td class="td">86%</td>
+                        <td class="td">86%</td>
+                        <td>
+                          <li class="list-inline-item">
+                            <i
+                              class="btn-sm rounded-0 log-in-btn-modal"
+                              type="icon"
+                              data-toggle="tooltip"
+                              data-placement="top"
+                              title="Edit"
+                              ><i class="fa fa-edit"></i
+                            ></i>
+                          </li>
+                          <li class="list-inline-item">
+                            <i
+                              class="btn-sm rounded-0 btnDelete"
+                              type="icon"
+                              data-toggle="tooltip"
+                              data-placement="top"
+                              onclick="deleterecord()"
+                              title="Delete"
+                              ><i class="fa fa-trash"></i
+                            ></i>
+                          </li>
+                        </td>
+                      </tr>
+                      <tr class="tr">
+                        <td class="td">1st</td>
+                        <td class="td">2nd</td>
+                        <td class="td">3rd</td>
+                        <td class="td">4th</td>
+                        <td class="td">5th</td>
+                        <td class="td">1st</td>
+                        <td class="td">2nd</td>
+                        <td class="td">3rd</td>
+                        <td class="td">4th</td>
+                        <td class="td">5th</td>
+                        <td>
+                          <li class="list-inline-item">
+                            <i
+                              class="btn-sm rounded-0 log-in-btn-modal"
+                              type="button"
+                              data-toggle="tooltip"
+                              data-placement="top"
+                              title="Edit"
+                              ><i class="fa fa-edit"></i
+                            ></i>
+                          </li>
+                          <li class="list-inline-item">
+                            <i
+                              class="btn-sm rounded-0 btnDelete"
+                              type="button"
+                              data-toggle="tooltip"
+                              data-placement="top"
+                              onclick="deleterecord()"
+                              title="Delete"
+                              ><i class="fa fa-trash"></i
+                            ></i>
+                          </li>
+                        </td>
+                      </tr>
+                      <tr class="tr">
+                        <td class="td">A+</td>
+                        <td class="td">A+</td>
+                        <td class="td">A+</td>
+                        <td class="td">A+</td>
+                        <td class="td">A+</td>
+                        <td class="td">A+</td>
+                        <td class="td">A+</td>
+                        <td class="td">A+</td>
+                        <td class="td">A+</td>
+                        <td class="td">A+</td>
+                        <td>
+                          <li class="list-inline-item">
+                            <i
+                              class="btn-sm rounded-0 log-in-btn-modal"
+                              type="icon"
+                              data-toggle="tooltip"
+                              data-placement="top"
+                              title="Edit"
+                              ><i class="fa fa-edit"></i
+                            ></i>
+                          </li>
+                          <li class="list-inline-item">
+                            <i
+                              class="btn-sm rounded-0 btnDelete"
+                              type="icon"
+                              data-toggle="tooltip"
+                              data-placement="top"
+                              onclick="deleterecord()"
+                              title="Delete"
+                              ><i class="fa fa-trash"></i
+                            ></i>
+                          </li>
+                        </td>
+                      </tr>
+                      <tr class="tr">
+                        <td class="td">Pass</td>
+                        <td class="td">Pass</td>
+                        <td class="td">Pass</td>
+                        <td class="td">Pass</td>
+                        <td class="td">Pass</td>
+                        <td class="td">Pass</td>
+                        <td class="td">Pass</td>
+                        <td class="td">Pass</td>
+                        <td class="td">Pass</td>
+                        <td class="td">Pass</td>
+                        <td>
+                          <li class="list-inline-item">
+                            <i
+                              class="btn-sm rounded-0 log-in-btn-modal"
+                              type="icon"
+                              data-toggle="tooltip"
+                              data-placement="top"
+                              title="Edit"
+                              ><i class="fa fa-edit"></i>
+                            </i>
+                          </li>
 
-                        <li class="list-inline-item">
-                          <i class=" btn-sm rounded-0 log-in-btn-modal" type="icon" data-toggle="tooltip"
-                            data-placement="top" title="Edit"><i class="fa fa-edit"></i></i>
-                        </li>
-                        <li class="list-inline-item">
-                          <i class=" btn-sm rounded-0" type="icon" data-toggle="dialog-box" data-placement="top"
-                            onclick="deleterecord()" title="Delete"><i class="fa fa-trash"></i></i>
-                        </li>
-
-                      </td>
-                    </tr>
-                    <tr class="tr">
-                      <td class="td">86%</td>
-                      <td class="td">86%</td>
-                      <td class="td">86%</td>
-                      <td class="td">86%</td>
-                      <td class="td">86%</td>
-                      <td class="td">86%</td>
-                      <td class="td">86%</td>
-                      <td class="td">86%</td>
-                      <td class="td">86%</td>
-                      <td class="td">86%</td>
-                      <td>
-
-                        <li class="list-inline-item">
-                          <i class="btn-sm rounded-0 log-in-btn-modal" type="icon" data-toggle="tooltip" data-placement="top"
-                            title="Edit"><i class="fa fa-edit"></i></i>
-                        </li>
-                        <li class="list-inline-item">
-                          <i class="btn-sm rounded-0 btnDelete" type="icon" data-toggle="tooltip" data-placement="top"
-                            onclick="deleterecord()" title="Delete"><i class="fa fa-trash"></i></i>
-                        </li>
-
-                      </td>
-                    </tr>
-                    <tr class="tr">
-                      <td class="td">1st</td>
-                      <td class="td">2nd</td>
-                      <td class="td">3rd</td>
-                      <td class="td">4th</td>
-                      <td class="td">5th</td>
-                      <td class="td">1st</td>
-                      <td class="td">2nd</td>
-                      <td class="td">3rd</td>
-                      <td class="td">4th</td>
-                      <td class="td">5th</td>
-                      <td>
-
-                        <li class="list-inline-item">
-                          <i class="btn-sm rounded-0 log-in-btn-modal" type="button" data-toggle="tooltip"
-                            data-placement="top" title="Edit"><i class="fa fa-edit"></i></i>
-                        </li>
-                        <li class="list-inline-item">
-                          <i class="btn-sm rounded-0 btnDelete" type="button" data-toggle="tooltip" data-placement="top"
-                            onclick="deleterecord()" title="Delete"><i class="fa fa-trash"></i></i>
-                        </li>
-
-                      </td>
-                    </tr>
-                    <tr class="tr">
-                      <td class="td">A+</td>
-                      <td class="td">A+</td>
-                      <td class="td">A+</td>
-                      <td class="td">A+</td>
-                      <td class="td">A+</td>
-                      <td class="td">A+</td>
-                      <td class="td">A+</td>
-                      <td class="td">A+</td>
-                      <td class="td">A+</td>
-                      <td class="td">A+</td>
-                      <td>
-
-                        <li class="list-inline-item">
-                          <i class="btn-sm rounded-0 log-in-btn-modal" type="icon" data-toggle="tooltip" data-placement="top"
-                            title="Edit"><i class="fa fa-edit"></i></i>
-                        </li>
-                        <li class="list-inline-item">
-                          <i class="btn-sm rounded-0 btnDelete" type="icon" data-toggle="tooltip" data-placement="top"
-                            onclick="deleterecord()" title="Delete"><i class="fa fa-trash"></i></i>
-                        </li>
-
-                      </td>
-                    </tr>
-                    <tr class="tr">
-                      <td class="td">Pass</td>
-                      <td class="td">Pass</td>
-                      <td class="td">Pass</td>
-                      <td class="td">Pass</td>
-                      <td class="td">Pass</td>
-                      <td class="td">Pass</td>
-                      <td class="td">Pass</td>
-                      <td class="td">Pass</td>
-                      <td class="td">Pass</td>
-                      <td class="td">Pass</td>
-                      <td>
-
-                        <li class="list-inline-item">
-                          <i class="btn-sm rounded-0 log-in-btn-modal" type="icon" data-toggle="tooltip" data-placement="top"
-                            title="Edit"><i class="fa fa-edit"></i>
-                          </i>
-                        <li class="list-inline-item">
-                          <i class="btn-sm rounded-0 btnDelete" type="icon" data-toggle="tooltip" data-placement="top"
-                            onclick="deleterecord()" title="Delete""><i class=" fa fa-trash"></i>
-
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                          <li class="list-inline-item">
+                            <i class="btn-sm rounded-0 btnDelete" type="icon"
+                            data-toggle="tooltip" data-placement="top"
+                            onclick="deleterecord()" title="Delete""><i
+                              class="fa fa-trash"
+                            ></i>
+                          </li>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    
-
-
-
-
-  </section>
-
-
-</body>
-
+    </section>
+  </body>
 </html>
