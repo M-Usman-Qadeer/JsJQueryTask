@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Js and Jquery Tasks</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="mystyle.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script> 
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body>
+  <script type="text/javascript" src="myscript.js"></script>
+  <section class="space">
+    <div class="container">
+      <div class="card">
+        <div class="card-header">
+        <div class="flex-container">
+          <div class="flex-item-left">
+            <h4 class="card-title">Details</h4>
+          </div>
+        </div>
+        </div>
+<div class="card-body">
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+  <div class="cardtable pt-5">
+            <div >
+              <table class="table">
+                <thead class="thead-light">
+                  <tr class="tr">
+                    <th class="th">NSE Code</th>
+                    <th class="th">Today Open</th>
+                    <th class="th">Today High</th>
+                    <th class="th">Today Low</th>
+                    <th class="th">Today Close</th>
+                    <th class="th">ltp</th>
+                    <th class="th">dayChange</th>
+                    <th class="th">dayChangePerc</th>
+                  </tr>
+                </thead>
+                <tbody id="data">
+                  </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+           
+      </div>
+    </div>
+  </div>
+  </section>
+
+ <script>
+    $.ajax({
+        url: "https://api.stockmarketapi.in/api/v1/indexprice?token=1d398177202f7433b2f0c26084e0ac7a1c383cd30b7c298ab50293adfecb7b18&indexcode=NIFTY",
+        type: 'GET',
+        dataType: 'json', // added data type
+        success: function(res) {
+            console.log(res);
+            if(res.status === '1'){
+                let data=res.data;
+                for(let i=0; i < data.length; i++){
+                $("#data").append('<tr class="tr"><td>'+ data[i].NSECode+'</td><td>'+ data[i].TodayOpen+'</td><td>'+ data[i].TodayHigh+'</td><td>'+ data[i].TodayLow+'</td><td>'+ data[i].TodayClose+'</td><td>'+ data[i].ltp+'</td><td>'+ data[i].dayChange+'</td><td>'+ data[i].dayChangePerc+'</td></tr>');
+                }
+            }
+        }
+    });
+ </script>
+</body>
+
+</html>
